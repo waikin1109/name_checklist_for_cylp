@@ -20,22 +20,22 @@
 
 .container {
     position: absolute;
-    top: 72%;
+    top: clamp(65%, 2vw + 60%, 72%);
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 100px 100px;
+    padding: clamp(25px, 6vw + 5px, 100px) clamp(20px, 7vw + 5px, 100px);
     background: rgba(0, 0, 0, 0.6);
-    border-radius: 30px;
+    border-radius: clamp(12px, 3vw, 40px);
 }
 
+
 h1 {
-    font-size: 60px;
+    font-size: clamp(40px, 5vw + 1rem, 60px);
     color:white;
-    
 }
 
 button {
-    padding: 11px 135px;
+    padding: 11px clamp(75px, 10vw, 135px);
     margin-top: 20px;
     border-radius: 20px;
     border: none;
@@ -43,13 +43,28 @@ button {
     color: white;
     font-weight: bold;
     font-size: 22px;
+    transition: ease-in-out 0.4s;
     background-color: #e13347
+}
 
+button:hover {
+    opacity: 0.7;
+    background-color: #f50723
+}
+
+button:active {
+    opacity: 1;
+    background-color: #f30b26
 }
 
 input {
     margin-top: 20px;
-    padding: 10px 100px;
+    padding: 10px clamp(55px, 6vw + 10px, 100px); 
+}
+
+::placeholder {
+    color:grey;
+    font-size: 1.2em;
 }
 
 p {
@@ -61,7 +76,13 @@ p {
     align-items: center;
 }
 
-@media (max-width: 40em) {
+.button:hover {
+    opacity: 0.5;
+}
+
+/* 320 x 669 */
+
+@media (min-width: 320px) {
     .header {
         display: flex;
         flex-direction: column;
@@ -69,47 +90,154 @@ p {
     }
 
     .bg-img {
-        background-image: url("image/Caltex Portrait.jpg") !important;
-        background-image: fill;
+        background-image: url("image/Caltex Portrait.jpg");
+        background-size: cover;
         max-width: auto;
         max-height: auto;
     }
     
-    .container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        top: 65%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 30px 50px;
-        background: rgba(0, 0, 0, 0.6);
-        border-radius: 30px;
-    }
-    h1 {
-        font-size: 40px;
-        color:white;
-    
-    }
+   
 
     button {
-        
-        padding: 13px 100px;
         margin-top: 20px;
         border-radius: 20px;
         border: none;
         cursor: pointer;
         color: white;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 15px;
         background-color: #e13347
         
     }
 
-    input {
+
+}
+
+/* 375 x 669 (M) */
+
+@media (min-width: 374px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bg-img {
+        background-image: url("image/Caltex Portrait.jpg");
+        background-size: cover;
+        max-width: auto;
+        max-height: auto;
+    }
+    
+    
+
+    button {
         margin-top: 20px;
-        padding: 10px 70px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        background-color: #e13347
+        
+    }
+
+
+}
+
+
+
+/* 425 x 669 (M) */
+
+@media (max-width: 425px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bg-img {
+        background-image: url("image/Caltex Portrait.jpg");
+        background-size: cover;
+        max-width: auto;
+        max-height: auto;
+    }
+    
+
+    button {
+        margin-top: 20px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        background-color: #e13347
+        
     }
 
 }
 
+/* 768 x 669  */
+
+@media (min-width: 768px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bg-img {
+        background-image: url("image/Caltex Portrait.jpg") ;
+        background-size: cover;
+        max-width: auto;
+        max-height: auto;
+    }
+    
+   
+
+    button {
+        margin-top: 20px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        background-color: #e13347
+        
+    }
+
+}
+
+
+/* 1024 x 669 (M) */
+
+@media (min-width: 1024px) {
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bg-img {
+        background-image: url("image/Caltex.jpeg") !important;
+        background-size: cover;
+        max-width: auto;
+        max-height: auto;
+    }
+    
+    button {
+        margin-top: 20px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        background-color: #e13347
+        
+    }
+
+}
