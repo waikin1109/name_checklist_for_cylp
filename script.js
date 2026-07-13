@@ -26,7 +26,7 @@ submitBtn.addEventListener("click", async () => {
         const result = await response.json();
 
         if (result.success) {
-            showText.textContent = `Welcome ${result.name}!`;
+            showText.textContent = `Welcome, ${result.name.toUpperCase()}!`; 
             nameInput.value = "";
         } else {
             showText.textContent = result.message;
